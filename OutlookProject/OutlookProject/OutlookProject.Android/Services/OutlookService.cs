@@ -21,7 +21,11 @@ namespace OutlookProject.Droid.Services
         [Obsolete]
         public Task<bool> Launch(string stringUri, string to, string cc, string subject, string text)
         {
-            Intent intent = Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(stringUri);
+
+            //Intent intent = Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(stringUri);
+            //Intent intent = new Intent().SetClassName(stringUri,stringUri+)
+            Intent intent = new Intent(Intent.ActionSend);
+            
             try
             {
 
@@ -31,11 +35,14 @@ namespace OutlookProject.Droid.Services
 
                 if (intent != null)
                 {
-                    intent = new Intent(Intent.ActionSend);
+                    //intent.SetAction(Intent.ActionSendto);
+                    //intent = new Intent(Intent.ActionSend);
+
+                    intent.SetPackage(stringUri);
 
                     intent.SetData(Android.Net.Uri.Parse("mailto:"));
-                    intent.SetType("text/plain");
-                    intent.PutExtra(Intent.ExtraEmail, new string[] { to });
+                    intent.SetType("message/rfc822");
+                    intent.PutExtra(Intent.ExtraEmail, new string[]{to });
                     intent.PutExtra(Intent.ExtraCc, cc);
                     intent.PutExtra(Intent.ExtraSubject, subject);
                     intent.PutExtra(Intent.ExtraText, text);

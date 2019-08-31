@@ -26,6 +26,7 @@ namespace OutlookProject.Views
 
             if(Device.RuntimePlatform == Device.Android)
             {
+                //DependencyService.Get<IOutlookService>().Launch("com.microsoft.office.outlook", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
                 DependencyService.Get<IOutlookService>().Launch("com.microsoft.office.outlook", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
             }
             else if(Device.RuntimePlatform == Device.iOS)

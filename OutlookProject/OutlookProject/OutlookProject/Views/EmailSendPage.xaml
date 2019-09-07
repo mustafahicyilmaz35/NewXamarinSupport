@@ -19,7 +19,11 @@
             <Label x:Name="lbl_message" Text="Text"/>
             <Entry x:Name="entry_message"/>
 
+            <Label x:Name="lbl_notes" Text="Notes"/>
+            <Entry x:Name="entry_notes"/>
+
             <Button x:Name="btn_Send" Text="Send" Clicked="onSendButtonClicked"/>
+            <Button x:Name="btn_notes" Text="Take Note" Clicked="OnNotesButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

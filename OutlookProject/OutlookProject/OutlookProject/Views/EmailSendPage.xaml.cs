@@ -24,18 +24,15 @@ namespace OutlookProject.Views
 
             //DependencyService.Get<ILaunchApp>().Launch("https://outlook.office.com/api/v2.0", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
 
-            if(Device.RuntimePlatform == Device.Android)
-            {
+            
                 //DependencyService.Get<IOutlookService>().Launch("com.microsoft.office.outlook", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
                 DependencyService.Get<IOutlookService>().Launch("com.microsoft.office.outlook", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
-            }
-            else if(Device.RuntimePlatform == Device.iOS)
-            {
-                DependencyService.Get<IOutlookService>().Launch("ms-outlook://compose", entry_mailAdress.Text, entry_cc.Text, entry_subject.Text, entry_message.Text);
-                DisplayAlert("Dikkat","Button Çalıştı.", "OK", "CANCEL");
-            }
-
             
+        }
+
+        void OnNotesButtonClicked(object sender, EventArgs e)
+        {
+            DependencyService.Get<INotePadService>().NotepadLaunch(entry_notes.Text);
         }
     }
 }

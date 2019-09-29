@@ -16,7 +16,7 @@ namespace Sekreter.UI
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new ContactListPage());
         }
         protected override void OnStart()
         {

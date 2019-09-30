@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\ContactService.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
@@ -132,6 +133,10 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sekreter.Core\Sekreter.Core.csproj">
+      <Project>{F10C4EDA-C3AC-43B7-8AF9-ACBF570D760D}</Project>
+      <Name>Sekreter.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sekreter.UI\Sekreter.UI.csproj">
       <Project>{223F4B81-1983-4782-B339-03D0642EC5AF}</Project>
       <Name>Sekreter.UI</Name>

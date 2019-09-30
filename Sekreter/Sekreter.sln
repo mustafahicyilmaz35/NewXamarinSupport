@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sekreter.Android", "Sekrete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sekreter.iOS", "Sekreter.iOS\Sekreter.iOS.csproj", "{46B6B788-119A-4CB5-9577-9AFC0359C310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sekreter.Core", "Sekreter.Core\Sekreter.Core.csproj", "{F10C4EDA-C3AC-43B7-8AF9-ACBF570D760D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sekreter.Core", "Sekreter.Core\Sekreter.Core.csproj", "{F10C4EDA-C3AC-43B7-8AF9-ACBF570D760D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sekreter.Android.Services", "Sekreter.Android.Services\Sekreter.Android.Services.csproj", "{27EBDFCD-4FC1-43F9-8559-8FCC2579B1F5}"
 EndProject

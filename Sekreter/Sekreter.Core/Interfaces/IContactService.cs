@@ -8,6 +8,7 @@ namespace Sekreter.Core.Interfaces
 {
     public interface IContactService
     {
-        IEnumerable<PhoneContacts> GetAllContacts();
+        Task<List<Contact>> GetContactListAsync();
+        List<Contact> GetContactList();
     }
 }

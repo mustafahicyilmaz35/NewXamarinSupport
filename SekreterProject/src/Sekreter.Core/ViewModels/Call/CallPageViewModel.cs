@@ -4,15 +4,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
-namespace Sekreter.Core.ViewModels.Contact
+namespace Sekreter.Core.ViewModels.Call
 {
-    public class ContactViewModel : BaseViewModel
+    public class CallPageViewModel : BaseViewModel
     {
-        public ContactViewModel()
+        public CallPageViewModel()
         {
 
         }
-
-       
     }
 }

@@ -12,11 +12,7 @@
     <string>1.0</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
-
-  <key>NSContactsUsageDescription</key>
-  <string>This app requires contacts access to function properly.</string>
-
-  <key>MinimumOSVersion</key>
+    <key>MinimumOSVersion</key>
         <string>12.2</string>
     <key>UIDeviceFamily</key>
     <array>

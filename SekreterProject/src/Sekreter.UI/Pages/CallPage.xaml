@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:CallPageViewModel"
+    
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             x:Class="Sekreter.UI.Pages.CallPage"
+             xmlns:local="clr-namespace:Sekreter.Core.Models;assembly=Sekreter.Core"
+             xmlns:viewModels="clr-namespace:Sekreter.Core.ViewModels.Call;assembly=Sekreter.Core">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label x:Name="label_firsname" Text="{Binding FirstName}" HorizontalOptions="Center"/>
+            <Label x:Name="label_phonenumber" Text="{Binding PhoneNumber}" HorizontalOptions="Center"/>
+            <StackLayout/>
+            <StackLayout>
+                <Button x:Name="button_call" Text="Ara" HorizontalOptions="Center" Clicked="OnCallClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+
+</views:MvxContentPage>

@@ -5,17 +5,16 @@ using System.Text;
 
 namespace Sekreter.Core.Models
 {
-    public class PhoneContacts
+    public class Contact
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Name { get; set; }
+        public string Number { get; set; }
         public string Email { get; set; }
 
         public IList Numbers { get; set; }
         public IList Emails { get; set; }
 
-        public PhoneContacts()
+        public Contact()
         {
             Numbers = new List<string>();
             Emails = new List<string>();

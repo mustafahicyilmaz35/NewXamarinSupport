@@ -33,5 +33,7 @@ namespace Sekreter.Droid
             base.OnCreate(bundle);
             RequestPermissions(Permissions, requestCode);
         }
+
+       
     }
 }

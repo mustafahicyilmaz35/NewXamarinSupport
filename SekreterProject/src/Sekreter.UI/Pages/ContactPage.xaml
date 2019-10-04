@@ -8,20 +8,25 @@
              xmlns:local="clr-namespace:Sekreter.UI.Pages"
              x:Class="Sekreter.UI.Pages.ContactPage"
              xmlns:viewModels="clr-namespace:Sekreter.Core.ViewModels.Contact;assembly=Sekreter.Core">
+  
+    
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="contact_lstView">
+            <views:MvxListView x:Name="contact_lstView" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="{Binding FirstName}"/>
-                                <Label Text="{Binding PhoneNumber}"/>
+                                <Label x:Name="label_firstname" Text="{Binding FirstName, Mode=TwoWay}"/>
+                                <Label x:Name="label_phonenumber" Text="{Binding PhoneNumber}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </views:MvxListView>
+            <Button x:Name="btn_one"/>
+            <Button x:Name="btn_two"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

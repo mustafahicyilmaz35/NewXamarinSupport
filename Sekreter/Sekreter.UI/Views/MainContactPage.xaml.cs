@@ -35,7 +35,7 @@ namespace Sekreter.UI.Views
                        await Navigation.PushAsync(new SendSmsPage((e.SelectedItem as Contact).Number));
                         break;
                     case "Whatsapp Mesajı Gönder":
-
+                        await Navigation.PushAsync(new SendWhatsappPage((e.SelectedItem as Contact).Name, (e.SelectedItem as Contact).Number));
                         break;
                     case "E-Posta Gönder":
 

@@ -111,6 +111,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.2.0.848062</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.OpenWhatsApp">
+      <Version>1.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sekreter.Core\Sekreter.Core.csproj">

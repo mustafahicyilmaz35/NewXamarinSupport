@@ -41,10 +41,10 @@ namespace Sekreter.UI.Views
                         await Navigation.PushAsync(new OutlookPage((e.SelectedItem as Contact).Email));
                         break;
                     case "Not Ekle":
-
+                        await Navigation.PushAsync(new NotePage());
                         break;
                     case "Kişi Bilgisi":
-
+                        await Navigation.PushAsync(new PersonInfoPage((e.SelectedItem as Contact).Name,(e.SelectedItem as Contact).Number,(e.SelectedItem as Contact).Email));
                         break;
 
 

@@ -18,11 +18,11 @@ namespace Sekreter.UI.Views
             InitializeComponent();
         }
 
-        public SendWhatsappPage(string recipient, string phoneNumber)
+        public SendWhatsappPage(string name, string phoneNumber)
         {
             InitializeComponent();
             label_whatsappname.Text = phoneNumber;
-            label_whatsappnumber.Text = recipient;
+            label_whatsappnumber.Text = name;
             
         }
 

@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="label_whatsappname"/>
-            <Label x:Name="label_whatsappnumber" IsVisible="False"/>
+            <Label x:Name="label_whatsappnumber"/>
             <Entry x:Name="entry_whapsappmessage"/>
             <Button x:Name="button_sendwhatsapp" Text="Gönder" Clicked="OnSendWhatsappClicked"/>
         </StackLayout>

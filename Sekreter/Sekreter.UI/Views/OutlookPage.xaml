@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sekreter.UI.Views.OutlookPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbl_mailAdress" Text="To"/>
+            <Label x:Name="label_mailAdress"/>
+
+            <Label x:Name="lbl_cc" Text="Cc"/>
+            <Entry x:Name="entry_cc"/>
+
+
+            <Label x:Name="lbl_subject" Text="Subject"/>
+            <Entry x:Name="entry_subject"/>
+
+
+            <Label x:Name="lbl_message" Text="Text"/>
+            <Entry x:Name="entry_message"/>
+
+            <Button x:Name="button_sendoutlook" Text="Send" Clicked="OnOutlookButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -38,7 +38,7 @@ namespace Sekreter.UI.Views
                         await Navigation.PushAsync(new SendWhatsappPage((e.SelectedItem as Contact).Name, (e.SelectedItem as Contact).Number));
                         break;
                     case "E-Posta Gönder":
-
+                        await Navigation.PushAsync(new OutlookPage((e.SelectedItem as Contact).Email));
                         break;
                     case "Not Ekle":
 

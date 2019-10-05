@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewModel="clr-namespace:Sekreter.Core.ViewModels;assembly=Sekreter.Core"
+             x:Class="Sekreter.UI.Views.SendSmsPage">
+    <ContentPage.BindingContext>
+        <viewModel:SendSmsPageViewModel></viewModel:SendSmsPageViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="label_smsname"/>
+            <Entry x:Name="entry_smstext" />
+            <Button x:Name="button_smssend" Text="Gönder" Clicked="OnSendSmsClicked" Command="{Binding smsCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

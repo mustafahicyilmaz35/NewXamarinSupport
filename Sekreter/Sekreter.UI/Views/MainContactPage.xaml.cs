@@ -32,7 +32,7 @@ namespace Sekreter.UI.Views
                         BindingContext = new MainContactViewModel((e.SelectedItem as Contact).Number);
                         break;
                     case "Sms Mesajı Gönder":
-                        await DisplayAlert("Deneme", "Sms", "OK", "CANCEL");
+                       await Navigation.PushAsync(new SendSmsPage((e.SelectedItem as Contact).Number));
                         break;
                     case "Whatsapp Mesajı Gönder":
 

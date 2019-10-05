@@ -16,7 +16,7 @@ namespace Sekreter.UI
         public App()
         {
             InitializeComponent();
-            MainPage = new MainContactPage();
+            MainPage = new NavigationPage(new MainContactPage());
         }
     }
 }

@@ -8,14 +8,14 @@
              x:Class="Sekreter.UI.Views.MainContactPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lst_Contacts" HasUnevenRows="True" ItemSelected="OnItemSelected" >
+            <ListView x:Name="lst_Contacts" HasUnevenRows="True"  ItemTapped="OnItemTap">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
                                 <Label x:Name="lbl_Name" Text="{Binding Name}"/>
-                                <Label x:Name="lbl_PhoneNumber" Text="{Binding Number}"/>
-                                <Label x:Name="lbl_Email" Text="{Binding Email}"/>
+                                <Label x:Name="lbl_PhoneNumber" Text="{Binding Number}" IsVisible="False"/>
+                                <Label x:Name="lbl_Email" Text="{Binding Email}" IsVisible="False"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -25,6 +25,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchSdkVersion>13.0</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -64,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\ContactService.cs" />
+    <Compile Include="Services\NoteService.cs" />
+    <Compile Include="Services\OutlookService.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
@@ -134,6 +138,10 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sekreter.Core\Sekreter.Core.csproj">
+      <Project>{A7561C2E-3C8F-4F9D-B295-38C195D4EEED}</Project>
+      <Name>Sekreter.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sekreter.UI\Sekreter.UI.csproj">
       <Project>{42F33922-4EAF-440D-B0BB-23FA006D022F}</Project>
       <Name>Sekreter.UI</Name>

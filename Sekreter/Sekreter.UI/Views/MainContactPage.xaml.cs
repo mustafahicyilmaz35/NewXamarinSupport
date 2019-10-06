@@ -21,30 +21,30 @@ namespace Sekreter.UI.Views
             lst_Contacts.ItemsSource = DependencyService.Get<IContactService>().GetContactList();
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OnItemTap(object sender, ItemTappedEventArgs e)
         {
-            if(e.SelectedItem != null)
+            if(e.Item != null)
             {
                 var actionSheet = await DisplayActionSheet("Yapmak İstediğiniz işlemi Seçin.", "İptal", null, "Ara", "Sms Mesajı Gönder", "Whatsapp Mesajı Gönder", "E-Posta Gönder", "Not Ekle", "Kişi Bilgisi");
                 switch(actionSheet)
                 {
                     case "Ara":
-                        BindingContext = new MainContactViewModel((e.SelectedItem as Contact).Number);
+                        BindingContext = new MainContactViewModel((e.Item as Contact).Number);
                         break;
                     case "Sms Mesajı Gönder":
-                       await Navigation.PushAsync(new SendSmsPage((e.SelectedItem as Contact).Number));
+                       await Navigation.PushAsync(new SendSmsPage((e.Item as Contact).Number));
                         break;
                     case "Whatsapp Mesajı Gönder":
-                        await Navigation.PushAsync(new SendWhatsappPage((e.SelectedItem as Contact).Name, (e.SelectedItem as Contact).Number));
+                        await Navigation.PushAsync(new SendWhatsappPage((e.Item as Contact).Name, (e.Item as Contact).Number));
                         break;
                     case "E-Posta Gönder":
-                        await Navigation.PushAsync(new OutlookPage((e.SelectedItem as Contact).Email));
+                        await Navigation.PushAsync(new OutlookPage((e.Item as Contact).Email));
                         break;
                     case "Not Ekle":
                         await Navigation.PushAsync(new NotePage());
                         break;
                     case "Kişi Bilgisi":
-                        await Navigation.PushAsync(new PersonInfoPage((e.SelectedItem as Contact).Name,(e.SelectedItem as Contact).Number,(e.SelectedItem as Contact).Email));
+                        await Navigation.PushAsync(new PersonInfoPage((e.Item as Contact).Name,(e.Item as Contact).Number,(e.Item as Contact).Email));
                         break;
 
 

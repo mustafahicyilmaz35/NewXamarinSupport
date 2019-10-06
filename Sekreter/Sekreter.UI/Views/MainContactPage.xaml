@@ -8,7 +8,8 @@
              x:Class="Sekreter.UI.Views.MainContactPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lst_Contacts" HasUnevenRows="True"  ItemTapped="OnItemTap">
+            <SearchBar TextChanged="Searchbar_TextChanged"></SearchBar>
+            <ListView x:Name="lst_Contacts" HasUnevenRows="True"  ItemTapped="OnItemTap" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Key}" ItemsSource="{Binding GroupData}" GroupShortNameBinding="{Binding Key}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

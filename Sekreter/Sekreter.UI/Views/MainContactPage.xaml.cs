@@ -3,6 +3,7 @@ using Sekreter.Core.Models;
 using Sekreter.Core.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,26 @@ namespace Sekreter.UI.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainContactPage : ContentPage
     {
+        
         public MainContactPage()
         {
             InitializeComponent();
-            lst_Contacts.ItemsSource = DependencyService.Get<IContactService>().GetContactList();
+            //lst_Contacts.ItemsSource = DependencyService.Get<IContactService>().GetContactList();
+            lst_Contacts.BindingContext = new GroupingViewModel();
+        }
+
+        void Searchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(string.IsNullOrEmpty(e.NewTextValue))
+            {
+                lst_Contacts.ItemsSource = new GroupingViewModel().GroupData;
+                
+            }
+            else
+            {
+                // lst_Contacts.ItemsSource = new GroupingViewModel().GroupData.
+                lst_Contacts.ItemsSource = new GroupingViewModel().GroupData.Where(x => x.Any(y => y.Name.StartsWith(e.NewTextValue)));
+            }
         }
 
         async void OnItemTap(object sender, ItemTappedEventArgs e)

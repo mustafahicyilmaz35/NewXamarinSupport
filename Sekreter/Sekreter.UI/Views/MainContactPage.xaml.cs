@@ -4,6 +4,7 @@ using Sekreter.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,13 @@ namespace Sekreter.UI.Views
 
         void Searchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+            //SearchBar searchBar = (SearchBar)sender;
+            //lst_Contacts.ItemsSource = new GroupingViewModel().GroupData.Where(x => x.Any(y => y.Name.Contains(e.NewTextValue)));
+
+           
+
+            
             if(string.IsNullOrEmpty(e.NewTextValue))
             {
                 lst_Contacts.ItemsSource = new GroupingViewModel().GroupData;
@@ -35,21 +43,24 @@ namespace Sekreter.UI.Views
             {
                 // lst_Contacts.ItemsSource = new GroupingViewModel().GroupData.
                 lst_Contacts.ItemsSource = new GroupingViewModel().GroupData.Where(x => x.Any(y => y.Name.StartsWith(e.NewTextValue)));
+                //lst_Contacts.ItemsSource = DependencyService.Get<IContactService>().GetContactList().Where(x => x.Name.Contains(e.NewTextValue));
+                
             }
+
         }
 
         async void OnItemTap(object sender, ItemTappedEventArgs e)
         {
             if(e.Item != null)
             {
-                var actionSheet = await DisplayActionSheet("Yapmak İstediğiniz işlemi Seçin.", "İptal", null, "Ara", "Sms Mesajı Gönder", "Whatsapp Mesajı Gönder", "E-Posta Gönder", "Not Ekle", "Kişi Bilgisi");
+                var actionSheet = await DisplayActionSheet("Yapmak İstediğiniz işlemi Seçin.", "İptal", null, "Ara", "Sms Mesajı Gönder", "Whatsapp Mesajı Gönder", "E-Posta Gönder", "Not Ekle", "Kişi Bilgisi").ConfigureAwait(false);
                 switch(actionSheet)
                 {
                     case "Ara":
                         BindingContext = new MainContactViewModel((e.Item as Contact).Number);
                         break;
                     case "Sms Mesajı Gönder":
-                       await Navigation.PushAsync(new SendSmsPage((e.Item as Contact).Number));
+                        await Navigation.PushAsync(new SendSmsPage((e.Item as Contact).Number));
                         break;
                     case "Whatsapp Mesajı Gönder":
                         await Navigation.PushAsync(new SendWhatsappPage((e.Item as Contact).Name, (e.Item as Contact).Number));
@@ -61,7 +72,7 @@ namespace Sekreter.UI.Views
                         await Navigation.PushAsync(new NotePage());
                         break;
                     case "Kişi Bilgisi":
-                        await Navigation.PushAsync(new PersonInfoPage((e.Item as Contact).Name,(e.Item as Contact).Number,(e.Item as Contact).Email));
+                        await Navigation.PushAsync(new PersonInfoPage((e.Item as Contact).Name, (e.Item as Contact).Number, (e.Item as Contact).Email));
                         break;
 
 

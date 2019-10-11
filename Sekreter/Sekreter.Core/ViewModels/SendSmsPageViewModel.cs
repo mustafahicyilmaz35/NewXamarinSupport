@@ -28,14 +28,14 @@ namespace Sekreter.Core.ViewModels
 
        public SendSmsPageViewModel(string _messageText, string _recipient)
         {
-            
-               // messageText = _messageText;
-                //recipient = _recipient;
-                
+
+            // messageText = _messageText;
+            //recipient = _recipient;
 
 
 
-                SendSms(_messageText, _recipient);
+
+            SendSms(_messageText, _recipient);
         }
 
         public async Task SendSms(string messageText, string recipient)

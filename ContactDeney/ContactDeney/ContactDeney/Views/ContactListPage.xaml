@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:ContactDeney.ViewModels;assembly=ContactDeney"
+             mc:Ignorable="d"
+             x:Class="ContactDeney.Views.ContactListPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:ContactListViewModel></viewModel:ContactListViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Yeni Kişi" Order="Primary" Command="{Binding AddNewCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding ContactItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding FirstName}"></Label>
+                                <Label Text="{Binding LastName}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

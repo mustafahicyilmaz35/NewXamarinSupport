@@ -16,8 +16,10 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        
         <StackLayout>
-            <ListView ItemsSource="{Binding ContactItems}">
+            <SearchBar x:Name="searchBar" Placeholder="Kişi ismi giriniz." TextChanged="SearchBar_OnTextChanged"/>
+            <ListView x:Name="lst_Contact" ItemsSource="{Binding ContactItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

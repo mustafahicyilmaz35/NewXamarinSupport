@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage 
+    x:TypeArguments="viewModels:AddContactViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:viewModels="clr-namespace:ContactCross.Core.ViewModels;assembly=ContactCross.Core"
+             mc:Ignorable="d"
+             x:Class="ContactCross.UI.Pages.AddContactPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="İsim..." Text="{Binding Name}"></Entry>
+            <Entry Placeholder="Soyisim..." Text="{Binding Surname}"></Entry>
+            <Button Text="Ekle" Command="{Binding AddCommand}"></Button>
+            <Button Text="İptal" Command="{Binding BackCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</views:MvxContentPage>

@@ -15,8 +15,10 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        
         <StackLayout>
-            <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
+            <SearchBar TextChanged="SearchBar_OnTextChanged"></SearchBar>
+            <ListView x:Name="lst_Contact" ItemsSource="{Binding Contacts}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

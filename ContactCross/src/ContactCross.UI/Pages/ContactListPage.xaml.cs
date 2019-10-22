@@ -17,5 +17,19 @@ namespace ContactCross.UI.Pages
         {
             InitializeComponent();
         }
+
+        private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                lst_Contact.ItemsSource = (ViewModel as ContactListViewModel).Contacts;
+            }
+            else
+            {
+                lst_Contact.ItemsSource =
+                    (ViewModel as ContactListViewModel).Contacts.Where(p =>
+                        p.Name.ToLower().StartsWith(e.NewTextValue.ToLower()));
+            }
+        }
     }
 }

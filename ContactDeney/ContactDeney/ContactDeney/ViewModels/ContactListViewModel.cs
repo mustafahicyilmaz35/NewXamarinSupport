@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Input;
 using ContactDeney.Annotations;
 using ContactDeney.Models;
+using ContactDeney.Services;
 using ContactDeney.Views;
 using Xamarin.Forms;
 
@@ -37,7 +38,7 @@ namespace ContactDeney.ViewModels
         }
 
         public ICommand AddNewCommand { get; private set; }
-        public ICommand SearchCommand { get; private set; }
+        //public ICommand SearchCommand { get; private set; }
 
 
         public ContactListViewModel()
@@ -50,10 +51,10 @@ namespace ContactDeney.ViewModels
             });
 
             AddNewCommand = new Command(AddNewAction);
-            SearchCommand = new Command(SearchCommandExecute);
+            //SearchCommand = new Command(SearchCommandExecute);
         }
 
-        private void SearchCommandExecute()
+        /*private void SearchCommandExecute()
         {
             if (SearchedText != null)
             {
@@ -65,7 +66,7 @@ namespace ContactDeney.ViewModels
             }
 
             
-        }
+        }*/
 
         void AddNewAction()
         {
@@ -74,9 +75,10 @@ namespace ContactDeney.ViewModels
 
 
 
+       
+        
 
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

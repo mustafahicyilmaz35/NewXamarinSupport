@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FirstPrismSample.Views.ViewB"
+             Title="{Binding Title}">
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="{Binding Title}"/>
+        <Button Text="Navigation Main Page" Command ="{Binding NavigationCommand}"/>
+    </StackLayout>
+  
+</ContentPage>
